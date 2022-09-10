@@ -11,7 +11,7 @@ git config --global  user.name "这里换上你的用户名"
 git config --global user.email "这里换上你的邮箱"
 ```
 
-PS：对于当前项目如果想要配置特定的用户名与邮箱地址，可以删除参数`--global`来解决；
+注意：对于当前项目如果想要配置特定的用户名与邮箱地址，可以删除参数`--global`来解决；
 
 
 
