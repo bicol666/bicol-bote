@@ -4,44 +4,20 @@
 
 - **ES3**
 
-  - 创建变量
+  - 创建变量	var a = 100
 
-    ```javascript
-  var a = 100
-    ```
-
-  - 创建函数
-
-    ```javascript
-    function test(){}
-    ```
-
+  - 创建函数   function test(){}
+  
 - **ES6**
 
-  - 创建变量
+  - 创建变量   let a = 100
 
-    ```javascript
-  let a = 100
-    ```
+  - 创建常量   const a = 100
+  
+  - 模块导入   import a from 'lib/a.js'
 
-  - 创建常量
+  - 创建一个类   class animal{}
 
-    ```javascript
-  const a = 100
-    ```
-
-  - 模块导入
-  
-    ```javascript
-    import a from 'lib/a.js'
-    ```
-  
-  - 创建一个类
-  
-    ```javascript
-    class animal{}
-    ```
-  
     
 
 # 数据类型
@@ -67,7 +43,7 @@
 
 #### 字符串（string）
 
-> 所有用单引号、双引号、反引号（ES6模板字符串）包起来的都是字符串类型；
+所有用`单引号`、`双引号`、`反引号`（ES6模板字符串）包起来的都是字符串类型；
 
 
 
@@ -81,9 +57,9 @@
 
 ##### `toString`函数
 
-> 以下内容为不同数据类型调用`toString()`函数测试结果。
+以下内容为不同数据类型调用`toString()`函数测试结果：
 
-- number转换为string
+- **number转换为string**
 
   ```js
   1314.toString() // Uncaught SyntaxError: Invalid or unexpected token
@@ -94,18 +70,14 @@
   num.toString() // '1314'
   ```
 
-
-
-- 布尔类型（boolean）：转换为字符串形式输出。
+- **布尔类型（boolean）：转换为字符串形式输出**。
 
   ```js
   (true).toString() // 'true'
   (false).toString() // 'false'
   ```
 
-
-
-- null&undefined：均报错，`null`和`undefined`的`toString属性`不可读。
+- **null&undefined**：均报错，`null`和`undefined`的`toString属性`不可读。
 
   ```js
   (null).toString() // Uncaught TypeError: Cannot read properties of null (reading 'toString')
@@ -116,15 +88,15 @@
 
 
 
-- 引用数据类型
+- **引用数据类型**
 
-  普通对象 
+  **普通对象** 
 
   ```js
   ({name: '张三'}).toString() // [object Object]
   ```
 
-  数组对象：转换为字符串形式（去掉中括号）输出。
+  **数组对象**：转换为字符串形式（去掉中括号）输出。
 
   ```js
   ([1231,312,312,312]).toString() // '1231,312,312,312'
@@ -345,15 +317,13 @@ null、undefined、空字符串、NaN、0
 
 #### 特殊值（null&undefined）
 
-> null和undefined都代表是**没有**；
+null和undefined都代表是**没有**；
 
 
 
 **null**
 
-> 意料之中
-
-一般情况下都是我们开始时不知道变量的值，手动设置为初始空值null，后期再赋值为其它，null在堆栈内存当中没有空间；
+意料之中，一般情况下都是我们开始时不知道变量的值，手动设置为初始空值null，后期再赋值为其它，null在堆栈内存当中没有空间；
 
 ```javascript
 let num = null;
@@ -378,7 +348,7 @@ null == undefined // true
 
 ### 引用数据类型
 
-#### 普通对象（object）
+#### 1、普通对象（object）
 
 **普通对象的创建**
 
@@ -396,7 +366,7 @@ let person = {
 
 - 对象的属性都是以键值对的方式指定的,`name`是属性名，`zhangsan`是属性值；
 
-- 对象的属性名有字符串和数字两种；
+- 对象的属性名有**字符串**和**数字**两种；
 
 
 
@@ -415,12 +385,10 @@ console.log(person.name);//zhangsan
 console.log(person['name']);//zhangsan
 ```
 
-**注意**：对于数字属性名指定的属性只能以第二种方式获取
-
-```javascript
-//consol.log(person.1)	-->错误
-console.log(person[1]);//2000	-->正确
-```
+> **注意**：对于数字属性名指定的属性只能以第二种方式获取。
+>
+> consol.log(person.1)	-->错误
+> console.log(person[1])	-->正确
 
 
 
@@ -464,9 +432,7 @@ person.name = null;
 
 
 
-#### 数组（array）
-
----
+#### 2、数组（array）
 
 **数组对象的创建**
 
@@ -493,7 +459,7 @@ console.log(array[3]);//false
 
 
 
-#### 函数（function）
+#### 3、函数（function）
 
 ##### 什么是函数？
 
@@ -568,7 +534,7 @@ document.body.onclick = function(){
 
 
 
-### 数据类型的检测
+###4、 数据类型的检测
 
 
 
@@ -631,4 +597,107 @@ document.body.contentEditable = true
 恢复原状：
 document.body.contentEditable = 'inherit'
 ```
+
+
+
+# 数组
+
+数组也是对象，只不过比较特殊。他的`属性名`是`数字`，也叫`索引`，通过索引可访问到具体的元素。`length`属性代表数组长度。
+
+```js
+const arr = [12,32,31,32,43]
+console.log(typeof arr) //》》》'object'
+console.dir(arr)
+// 结果如下：
+Array(5)
+0: 12
+1: 32
+2: 31
+3: 32
+4: 43
+length: 5
+```
+
+
+
+通过索引可以获取指定位置的元素`arr[1]`，索引从`0`开始。通过`length`可获取数组长度`arr.length`。
+
+
+
+### 增加元素
+
+- 向数组**末尾位置**增加**一个或多个**元素 `push( any:param1 [,any:param2……])`，返回值是新增后数组的长度。
+
+  ```js
+  const arr = [12,32,31,32,43]
+  console.log(arr.push(23,43)) // 7
+  console.log(arr) // [12, 32, 31, 32, 43, 23, 43]
+  ```
+
+- 向数组**开始位置**增加**一个或多个**元素 `unshiftpush( any:param1 [,any:param2……])`，返回值是新增后数组的长度。
+
+  ```js
+  const arr = [12,32,31,32,43]
+  console.log(arr.unshift(23,43)) // 7
+  console.log(arr) // [23, 43, 12, 32, 31, 32, 43]
+  ```
+
+- <small>数组也是一个对象，因此也可以使用**操作对象键值对**的方式去增加元素，由于数组的索引是数字，所以不能通过`对象.属性`的方式去操作，只能通过`对象[属性]`的方式。</small>
+
+  ```js
+  const arr = [12,32,31,32,43]
+  // 以操作对象键值对的方式向末尾新增元素
+  arr[5] = 33 // 方式一、手动计算索引
+  arr[arr.length] = 44 // 方式二、利用length属性：leng = 数组最大索引 + 1
+  ```
+
+
+
+### 删除元素
+
+- 删除第一个元素`shift()`，返回被删除的元素。
+
+- 删除数组中最后一个元素`pop()`，返回被删除的元素。
+
+  
+
+### 特殊方法`splice`
+
+`splice`能实现数组的`增加`、`删除`、`修改`。
+
+**语法：**`splice( number:n [, number:m , number:x1 , number:x2……])`
+
+**作用：**从索引为`n`的元素开始，删除`m`个元素，腾出来的地方用`x`填充，`x`的个数、内容不限。`m`不写删除到数组末尾。
+
+**返回值：**被删除的元素形成的新数组。
+
+
+
+ **衍生的特殊用法**
+
+基于上述语法规则，会诞生以下特殊的用法：
+
+1、**清空**数组：`splice(0)`，同时返回的值又与原数组内容相同，类似于克隆。
+
+2、**删除**最后一项：`arr.splice( arr.length - 1 )`
+
+3、**删除**第一项：`arr.splice( 0,1 )`
+
+4、向索引为`n`的元素前面**增加**元素：`splice( n , 0 , x )`，由于删除的长度是`0`，所以会直接用后面的`x`填充到`n`前面。当然，`x`的个数不限。
+
+5、向数组末尾**增加**元素：`arr.splice( arr.length , 0 , x)`
+
+6、向数组开始**增加**元素：`splice(0,0,x)`
+
+6、将索引为`n`的元素后面的`m`个元素**修改**：`splice( n , m ,x1 ~ xn)`
+
+
+
+### 查询元素
+
+
+
+
+
+### 拼接数组
 
