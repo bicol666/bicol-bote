@@ -7,7 +7,7 @@
 
 如图，当我在输入框输入`servlet`时，输入框显示异常，最终显示输入内容为`slet`。
 
-![image-20220511115516926](D:\Nanum-Note\Java\IntelliJ IDEA\IntelliJ IDEA使用总结-img\image-20220511115516926.png)
+![image-20220511115516926](D:\bicol-Note\Java\IntelliJ IDEA\IntelliJ IDEA使用总结-img\image-20220511115516926.png)
 
 **解决办法**
 
@@ -62,6 +62,12 @@ Shift + f9
 ```shell
 Shift + f10
 ```
+
+
+
+### 自动补全（补全分号……）
+
+首先：删除快捷键`开始新行`，然后再为`补全代码`更换快捷键为`shift enter`
 
 
 
